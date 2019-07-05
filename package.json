@@ -1,0 +1,7 @@
+{
+  "name": "photo-print-test-app",
+  "private": true,
+  "dependencies": {
+    "create-react-app": "^3.0.1"
+  }
+}
