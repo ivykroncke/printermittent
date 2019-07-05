@@ -1,5 +1,8 @@
 import React, { Component } from "react"
 import styled from "styled-components"
+import Pdf from "react-to-pdf";
+
+const ref = React.createRef();
 
 const BadgeTemplate = styled.div`
 display: flex;
@@ -28,10 +31,15 @@ class Badge extends Component {
 
     render () {
         return (
-                <BadgeTemplate>
-                    <SampleText>Company Name</SampleText>
-                    <PortraitImage src={this.props.imageSrc} />
-                </BadgeTemplate>
+          <div>
+            <BadgeTemplate ref={ref}>
+              <SampleText>Company Name</SampleText>
+              <PortraitImage src={this.props.imageSrc} />
+            </BadgeTemplate>
+            <Pdf targetRef={ref} filename="Current-Badge.pdf">
+                {({ toPdf }) => <button onClick={toPdf}>Generate Pdf</button>}
+            </Pdf>
+           </div>
         )
     }
 }

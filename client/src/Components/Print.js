@@ -30,7 +30,6 @@ class Print extends Component {
                 <Badge 
                     imageSrc={this.props.imageSrc}
                 />
-                <MainButton onClick={()=> this.printPhoto()}>Print Photo?</MainButton>
                 <MainButton onClick={()=>this.props.toggleViewFromComponent()}>Retake</MainButton>
             </Wrapper>
         )
